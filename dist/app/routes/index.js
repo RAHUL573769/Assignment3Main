@@ -10,5 +10,7 @@ const globalRouter = (0, express_1.Router)();
 routes_1.default.forEach((route) => {
     globalRouter.use(route.path, route.router);
 });
-globalRouter.get('/courses', course_controller_1.default.retrieveAllCourse);
+globalRouter.get("/courses", course_controller_1.default.retrieveAllCourse);
+globalRouter.put("/courses/:courseId", course_controller_1.default.updateCourse);
+globalRouter.get("/courses/:courseId/reviews", course_controller_1.default.getCourseWithReview);
 exports.default = globalRouter;

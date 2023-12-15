@@ -1,4 +1,4 @@
-import { Types } from 'mongoose';
+import { Types } from "mongoose";
 
 export interface ITags {
   name: string;
@@ -18,6 +18,7 @@ interface ICourse {
   tags: ITags[];
   startDate: string;
   endDate: string;
+  durationInWeeks: string;
   language: string;
   provider: string;
   details: IDetails;
