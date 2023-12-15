@@ -1,8 +1,8 @@
-import express, { Application } from 'express';
-import cors from 'cors';
-import globalRouter from './app/routes';
-import notFoundController from './app/utils/notFound.controller';
-import globalErrorHandler from './app/middlewares/globalErrorHandler';
+import express, { Application } from "express";
+import cors from "cors";
+import globalRouter from "./app/routes";
+import notFoundController from "./app/utils/notFound.controller";
+import globalErrorHandler from "./app/middlewares/globalErrorHandler";
 
 // Application
 const app: Application = express();
@@ -12,14 +12,14 @@ app.use(cors());
 app.use(express.json());
 
 // Defining Routes
-app.use('/api', globalRouter);
+app.use("/api", globalRouter);
 
-app.get('/', async (req, res) => {
-  res.json('Server is working properly ✅');
+app.get("/", async (req, res) => {
+  res.json("Server is working properly ");
 });
 
 // Not found route error handling
-app.all('*', notFoundController);
+app.all("*", notFoundController);
 
 app.use(globalErrorHandler);
 
